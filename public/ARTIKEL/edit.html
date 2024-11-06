@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Artikel</title>
+    <script src="https://kit.fontawesome.com/19579c18fe.js" crossorigin="anonymous"></script> <!--FONT AWESOME-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tambahkan  Quill -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+</head>
+<body>
+    <section class="flex justify-center">
+        <div class="container bg-white shadow-2xl">
+            <div id="editor-container" style="height: 300px;">
+
+            </div>
+        </div>
+    </section>
+    <script>
+        var toolbarOptions = [
+            ['bold', 'italic', 'underline', 'strike'],        // teks tebal, miring, garis bawah, coret
+            ['blockquote', 'code-block'],                     // kutipan, kode
+            [{ 'header': 1 }, { 'header': 2 }],               // header level 1 & 2
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],     // daftar berurutan, poin
+            [{ 'script': 'sub' }, { 'script': 'super' }],      // subscript, superscript
+            [{ 'indent': '-1' }, { 'indent': '+1' }],          // mengurangi & menambah indentasi
+            [{ 'direction': 'rtl' }],                         // arah teks kanan ke kiri
+            [{ 'size': ['small', false, 'large', 'huge'] }],  // ukuran teks
+            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],        // ukuran header
+            [{ 'color': [] }, { 'background': [] }],          // warna teks, latar belakang
+            [{ 'font': [] }],                                 // jenis font
+            [{ 'align': [] }],                                // perataan teks
+            ['clean']                                         // menghapus format
+        ];
+
+        var quill = new Quill('#editor-container', {
+            theme: 'snow',
+            modules: {
+                toolbar: toolbarOptions
+            }
+        });
+    </script>
+</body>
+</html>
